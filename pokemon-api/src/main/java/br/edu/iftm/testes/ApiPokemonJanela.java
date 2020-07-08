@@ -34,23 +34,15 @@ public class ApiPokemonJanela extends JPanel{
 	
 	private String nomePokemon;
 	private String url;
-	private String spritePokemon;
-	private String typePokemon;
-	private ArrayList<String> abilities = new ArrayList<String>();
 	private int idPokemon;
 	private Api api;
 	private JSONObject json;
-	private JPanel painelEsquerda;
-	private JPanel painelDireita;
 	private JLabel label;
-	private JTextField caixaTexto;
 	private JTextArea pokedex;
 	private JLabel imagemPokemon;
 	private JComboBox pokemons;
-	private int count;
 	
 	public ApiPokemonJanela() throws IOException {
-		//nomePokemon = "bubasaur";
 		setBounds(0, 0, 700, 500);
 		setLayout(null);
 		janela();
@@ -97,7 +89,6 @@ public class ApiPokemonJanela extends JPanel{
 		add(pokemons);
 		add(imagemPokemon);
 		add(pokedex);
-		//add(caixaTexto);
 		add(label);
 		setVisible(true);
 	}
