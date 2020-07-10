@@ -3,6 +3,7 @@ package br.edu.iftm.testes;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -23,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -43,15 +45,44 @@ public class ApiPokemonJanela extends JPanel{
 	private JComboBox pokemons;
 	
 	public ApiPokemonJanela() throws IOException {
-		setBounds(0, 0, 700, 500);
+		setBounds(0, 0, 650, 410);
 		setLayout(null);
 		janela();
+		
+		JPanel panelDireito = new JPanel();
+		panelDireito.setBackground(Color.WHITE);
+		panelDireito.setBounds(211, 0, 423, 371);
+		panelDireito.setLayout(null);
+		add(panelDireito);
+		
+		JPanel panelEsquerdo = new JPanel();
+		panelEsquerdo.setBackground(new Color(100, 149, 237));
+		panelEsquerdo.setBounds(0, 0, 211, 371);
+		panelEsquerdo.setLayout(null);
+		add(panelEsquerdo);
+		
+		JLabel labelPokemon = new JLabel("- Pokémon API -");
+		labelPokemon.setForeground(new Color(255, 215, 0));
+		labelPokemon.setFont(new Font("Impact", Font.PLAIN, 40));
+		labelPokemon.setBounds(59, 29, 253, 75);
+		panelDireito.add(labelPokemon);
+				
+		JLabel labelInicio = new JLabel("Seja bem-vindo!");
+		labelInicio.setFont(new Font("Impact", Font.PLAIN, 18));
+		labelInicio.setBounds(30, 36, 190, 20);
+		panelEsquerdo.add(labelInicio);
+				
+		JLabel labelInformacao = new JLabel("Informação do Pokémon:");
+		labelInformacao.setFont(new Font("Stencil", Font.PLAIN, 14));
+		labelInformacao.setBounds(8, 152, 192, 23);
+		panelDireito.add(labelInformacao);		
+
 	}
-	
+
 	public void janela() throws MalformedURLException, IOException {
 		
 		pokemons = new JComboBox(listaPokemon());
-		pokemons.setBounds(50, 80, 122, 20);
+		pokemons.setBounds(30, 112, 122, 20);
 		pokemons.setEditable(false);
 		pokemons.addActionListener(new ActionListener() {
 			
@@ -77,14 +108,15 @@ public class ApiPokemonJanela extends JPanel{
 		});
 		
 		label = new JLabel("Nome do Pokémon:");
-		label.setFont(new Font("Tahoma", Font.BOLD, 12));
-		label.setBounds(50, 28, 122, 60);
+		label.setFont(new Font("Stencil", Font.PLAIN, 14));
+		label.setBounds(30, 75, 141, 26);
 		
 		imagemPokemon = pegarIcone(idPokemon);
 		
 		pokedex = new JTextArea();
 		pokedex.setEditable(false);
-		pokedex.setBounds(300, 200, 380, 260);
+		pokedex.setBounds(215, 186, 360, 183);	
+		pokedex.setFont(new Font("Modern No. 20", Font.PLAIN, 16));
 		
 		add(pokemons);
 		add(imagemPokemon);
