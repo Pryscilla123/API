@@ -46,6 +46,7 @@ public class ApiPokemonJanela extends JPanel{
 	
 	public ApiPokemonJanela() throws IOException {
 		setBounds(0, 0, 650, 410);
+		setBackground(Color.WHITE);
 		setLayout(null);
 		janela();
 		
