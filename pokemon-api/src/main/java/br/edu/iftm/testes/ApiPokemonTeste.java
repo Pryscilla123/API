@@ -16,12 +16,13 @@ public class ApiPokemonTeste {
 		JFrame pokeTela = new JFrame();
 		pokeTela.setBounds(340, 150, 590, 405);
 		pokeTela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		pokeTela.setVisible(true);
-	
+		
 		pokeTela.setLayout(null);
 		pokeTela.setResizable(false);
 		ApiPokemonJanela poke = new ApiPokemonJanela();
 		pokeTela.add(poke);
+		
+		pokeTela.setVisible(true);
 	}
 
 }

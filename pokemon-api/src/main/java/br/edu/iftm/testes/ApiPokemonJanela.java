@@ -49,33 +49,27 @@ public class ApiPokemonJanela extends JPanel{
 		setLayout(null);
 		janela();
 		
-		JPanel panelDireito = new JPanel();
-		panelDireito.setBackground(Color.WHITE);
-		panelDireito.setBounds(211, 0, 423, 371);
-		panelDireito.setLayout(null);
-		add(panelDireito);
-		
 		JPanel panelEsquerdo = new JPanel();
 		panelEsquerdo.setBackground(new Color(100, 149, 237));
 		panelEsquerdo.setBounds(0, 0, 211, 371);
 		panelEsquerdo.setLayout(null);
 		add(panelEsquerdo);
 		
-		JLabel labelPokemon = new JLabel("- Pokémon API -");
-		labelPokemon.setForeground(new Color(255, 215, 0));
-		labelPokemon.setFont(new Font("Impact", Font.PLAIN, 40));
-		labelPokemon.setBounds(59, 29, 253, 75);
-		panelDireito.add(labelPokemon);
-				
 		JLabel labelInicio = new JLabel("Seja bem-vindo!");
 		labelInicio.setFont(new Font("Impact", Font.PLAIN, 18));
 		labelInicio.setBounds(30, 36, 190, 20);
 		panelEsquerdo.add(labelInicio);
+		
+		JLabel labelPokemon = new JLabel("- Pokémon API -");
+		labelPokemon.setForeground(new Color(255, 215, 0));
+		labelPokemon.setFont(new Font("Impact", Font.PLAIN, 40));
+		labelPokemon.setBounds(265, 29, 253, 75);
+		add(labelPokemon);
 				
 		JLabel labelInformacao = new JLabel("Informação do Pokémon:");
 		labelInformacao.setFont(new Font("Stencil", Font.PLAIN, 14));
-		labelInformacao.setBounds(8, 152, 192, 23);
-		panelDireito.add(labelInformacao);		
+		labelInformacao.setBounds(220, 152, 192, 23);
+		add(labelInformacao);		
 
 	}
 
